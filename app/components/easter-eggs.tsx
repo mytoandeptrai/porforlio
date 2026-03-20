@@ -1,0 +1,347 @@
+"use client"
+
+import type React from "react"
+
+import { useState, useEffect, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+
+export default function EasterEggs() {
+  const [showConsole, setShowConsole] = useState(false)
+  const [consoleOutput, setConsoleOutput] = useState<string[]>([])
+  const [command, setCommand] = useState("")
+  const [cursorPosition, setCursorPosition] = useState(0)
+  const [showSecret, setShowSecret] = useState(false)
+  const [secretType, setSecretType] = useState<"http" | "sql" | "error" | null>(null)
+  const consoleEndRef = useRef<HTMLDivElement>(null)
+
+  // Auto scroll to bottom of console when output changes
+  useEffect(() => {
+    if (consoleEndRef.current) {
+      consoleEndRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [consoleOutput])
+
+  // Konami code easter egg
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window === "undefined") return
+
+    const konamiCode = [
+      "ArrowUp",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+      "b",
+      "a",
+    ]
+    let konamiIndex = 0
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Toggle console with backtick
+      if (e.key === ">") {
+        e.preventDefault()
+        setShowConsole((prev) => !prev)
+        return
+      }
+
+      // Check for Konami code
+      if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++
+        if (konamiIndex === konamiCode.length) {
+          setShowSecret(true)
+          setSecretType("http")
+          konamiIndex = 0
+          setTimeout(() => setShowSecret(false), 5000)
+        }
+      } else {
+        konamiIndex = 0
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [])
+
+  // Handle console commands
+  const handleCommandSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!command.trim()) return
+
+    const output = [...consoleOutput, `> ${command}`]
+
+    // Process commands
+    switch (command.toLowerCase()) {
+      case "help":
+        output.push(
+          "Available commands:",
+          "- help: Show this help message",
+          "- clear: Clear the console",
+          "- error: Simulate a server error",
+          "- about: About the developer",
+          "- awards: Show achievements & awards",
+          "- exit: Close the console",
+        )
+        break
+
+      case "clear":
+        setConsoleOutput([])
+        setCommand("")
+        return
+
+      case "error":
+        output.push(
+          "\x1b[31mERROR: Uncaught Exception at /api/projects (line 42)\x1b[0m",
+          "\x1b[33mTypeError: Cannot read property 'id' of undefined\x1b[0m",
+          "    at getProjectById (/api/projects:42:23)",
+          "    at processRequest (/middleware/auth:217:12)",
+          "    at async Router.handleApiRequest (/node_modules/next/server/router.js:28:9)",
+          "\x1b[34mStack trace saved to error.log\x1b[0m",
+        )
+        setShowSecret(true)
+        setSecretType("error")
+        setTimeout(() => setShowSecret(false), 3000)
+        break
+
+      case "about":
+        output.push(
+          "\x1b[34m=== Tran Phuoc My Toan (Jacob) ===\x1b[0m",
+          "",
+          "Role: Frontend Engineer & Leader",
+          "Experience: 4.5+ years",
+          "Location: DaNang, Vietnam",
+          "",
+          "Email: mytoandn@gmail.com",
+          "GitHub: github.com/mytoandeptrai",
+          "LinkedIn: linkedin.com/in/tran-phuoc-my-toan-613971199",
+          "",
+          "Specialties:",
+          "• React, Next.js, TypeScript",
+          "• Node.js, NestJS, GoLang",
+          "• Blockchain & Payment Systems",
+          "",
+          "\x1b[33mType 'awards' to see achievements\x1b[0m",
+        )
+        break
+
+      case "awards":
+        output.push(
+          "\x1b[33m=== Awards & Achievements ===\x1b[0m",
+          "",
+          "\x1b[31m🏆 Third Prize - Internal Company Hackathon (2025)\x1b[0m",
+          "   Var Meta Technology Joint Stock Company",
+          "   December 2025",
+          "",
+          "\x1b[34m⭐ Prospective Employee Award - 2024\x1b[0m",
+          "   VarMeta Technology Joint Stock Company",
+          "   December 2024",
+          "",
+          "\x1b[32m📜 IELTS Overall Band 6.5\x1b[0m",
+          "   IDP Education",
+          "   December 2025",
+          "",
+          "\x1b[33m🎓 Bachelor of Information Technology (Good)\x1b[0m",
+          "   University of Science and Education - Da Nang",
+          "   Graduated: July 2023",
+        )
+        break
+
+      case "exit":
+        setShowConsole(false)
+        break
+
+      default:
+        output.push(`Command not found: ${command}. Type 'help' for available commands.`)
+    }
+
+    setConsoleOutput(output)
+    setCommand("")
+  }
+
+  // Hidden elements that appear based on interactions
+  return (
+    <>
+      {/* Hidden console (press > to toggle) */}
+      <AnimatePresence>
+        {showConsole && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, y: 0, backdropFilter: "blur(8px)" }}
+            exit={{ opacity: 0, y: -20, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 border-b border-zinc-700 p-4 font-mono text-sm"
+            style={{ 
+              maxHeight: "50vh", 
+              overflowY: "auto",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)"
+            }}
+          >
+            <div className="container mx-auto">
+              <div className="mb-2 text-zinc-400">Backend Console v2.0.0 - Press {'>'} to hide
+                <span>
+                  <p>Available commands: </p>
+                  <br />
+                  <p>- help: Show this help message</p>
+                  <p>- clear: Clear the console</p>
+                  <p>- error: Simulate a server error</p>
+                  <p>- about: About the developer</p>
+                  <p>- awards: Show achievements & awards</p>
+                  <p>- exit: Close the console</p>
+                </span>
+              </div>
+
+              <div className="mb-4 text-zinc-300">
+                {consoleOutput.map((line, i) => (
+                  <motion.div 
+                    key={i} 
+                    className="whitespace-pre-wrap"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {line.startsWith("\x1b[31m") ? (
+                      <span className="text-red-500">{line.replace(/\x1b\[\d+m/g, "")}</span>
+                    ) : line.startsWith("\x1b[33m") ? (
+                      <span className="text-yellow-500">{line.replace(/\x1b\[\d+m/g, "")}</span>
+                    ) : line.startsWith("\x1b[34m") ? (
+                      <span className="text-blue-500">{line.replace(/\x1b\[\d+m/g, "")}</span>
+                    ) : (
+                      line
+                    )}
+                  </motion.div>
+                ))}
+                <div ref={consoleEndRef} />
+              </div>
+
+              <form onSubmit={handleCommandSubmit} className="flex items-center">
+                <span className="text-green-500 mr-2">$</span>
+                <input
+                  type="text"
+                  value={command}
+                  onChange={(e) => setCommand(e.target.value)}
+                  className="flex-1 bg-transparent border-none outline-none text-white"
+                  autoFocus
+                />
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Secret HTTP status codes (triggered by Konami code) */}
+      <AnimatePresence>
+        {showSecret && secretType === "http" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-4 right-4 z-50 bg-zinc-900 bg-opacity-90 border border-zinc-700 p-4 rounded-lg shadow-lg font-mono"
+            style={{ 
+              backdropFilter: "blur(5px)",
+              WebkitBackdropFilter: "blur(5px)"
+            }}
+          >
+            <div className="text-green-500 font-bold mb-2">HTTP Status Codes Cheat Sheet</div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+              <div>
+                <span className="text-blue-400">200</span> - OK
+              </div>
+              <div>
+                <span className="text-blue-400">201</span> - Created
+              </div>
+              <div>
+                <span className="text-blue-400">204</span> - No Content
+              </div>
+              <div>
+                <span className="text-yellow-400">301</span> - Moved Permanently
+              </div>
+              <div>
+                <span className="text-yellow-400">304</span> - Not Modified
+              </div>
+              <div>
+                <span className="text-red-400">400</span> - Bad Request
+              </div>
+              <div>
+                <span className="text-red-400">401</span> - Unauthorized
+              </div>
+              <div>
+                <span className="text-red-400">403</span> - Forbidden
+              </div>
+              <div>
+                <span className="text-red-400">404</span> - Not Found
+              </div>
+              <div>
+                <span className="text-red-400">500</span> - Internal Server Error
+              </div>
+            </div>
+            <div className="mt-2 text-xs text-zinc-400">Konami code activated!</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Error stack trace */}
+      <AnimatePresence>
+        {showSecret && secretType === "error" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-900 bg-opacity-80 border border-red-700 p-4 rounded-lg shadow-lg font-mono max-w-md w-full"
+            style={{ 
+              backdropFilter: "blur(5px)",
+              WebkitBackdropFilter: "blur(5px)"
+            }}
+          >
+            <div className="text-white font-bold mb-2 flex items-center">
+              <span className="mr-2">⚠️</span>
+              <span>Uncaught Exception</span>
+            </div>
+            <div className="text-xs text-red-200">
+              <pre className="whitespace-pre-wrap">
+                {`TypeError: Cannot read property 'id' of undefined
+    at getProjectById (/api/projects:42:23)
+    at processRequest (/middleware/auth:217:12)
+    at async Router.handleApiRequest (/node_modules/next/server/router.js:28:9)`}
+              </pre>
+            </div>
+            <div className="mt-2 text-xs text-red-300 flex justify-between">
+              <span>Process exited with code 1</span>
+              <button className="text-white hover:text-red-200">Dismiss</button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hidden comments in the DOM */}
+      {/* <!--
+        DEBUG MODE: false
+        ENV: production
+        VERSION: 2.0.0
+        DEVELOPER: Tran Phuoc My Toan (Jacob)
+        TECH STACK: React, Next.js, TypeScript, TailwindCSS
+        LAST DEPLOY: 2026-03-21T00:00:00Z
+        SECRET_KEY: Nice try! ;)
+        GITHUB: github.com/mytoandeptrai
+      --> */}
+
+      <div className="hidden">
+        <div data-easter-egg="true" data-trigger="ctrl+alt+b">
+          {`
+          function findSecretFeature() {
+            // TODO: Implement this feature before production
+            console.log("You found a secret feature!");
+            return Math.random() > 0.5 ? "Success" : "Try again";
+          }
+          `}
+        </div>
+      </div>
+    </>
+  )
+}
