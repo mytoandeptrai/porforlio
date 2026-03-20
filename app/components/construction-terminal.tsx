@@ -259,7 +259,7 @@ Please check back later or contact me for more information.`,
               soon.
             </p>
             <p className="mt-2">
-              <code>last_updated: 04-25-2025</code>
+              <code>last_updated: 03-21-2026</code>
             </p>
           </div>
         </motion.div>

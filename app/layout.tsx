@@ -13,7 +13,7 @@ export const generateMetadata = (): Metadata => {
       template: "%s | Jacob Portfolio",
     },
     description: "Frontend Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development. Led projects at Var Meta, including payment systems and stablecoin platforms.",
-    metadataBase: new URL("https://mytoandeptrai.online"),
+    metadataBase: new URL("https://porforlio-jacob.vercel.app"),
     keywords: [
       "Frontend Engineer",
       "React Developer",
@@ -31,7 +31,7 @@ export const generateMetadata = (): Metadata => {
     authors: [
       {
         name: "Tran Phuoc My Toan (Jacob)",
-        url: "https://mytoandeptrai.online"
+        url: "https://porforlio-jacob.vercel.app"
       }
     ],
     creator: "Tran Phuoc My Toan",
@@ -44,7 +44,7 @@ export const generateMetadata = (): Metadata => {
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: "https://mytoandeptrai.online",
+      url: "https://porforlio-jacob.vercel.app",
       title: "Jacob - Frontend Engineer",
       description: "Frontend Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
       siteName: "Jacob Portfolio",

@@ -6,7 +6,7 @@ Thank you for your interest in contributing! All contributions are welcome.
 
 ### Reporting Bugs
 
-1. Check if the bug has not already been reported in [Issues](https://github.com/jacob-projects/myPortfolio/issues)
+1. Check if the bug has not already been reported in [Issues](https://github.com/mytoandeptrai/porforlio.git/issues)
 2. Open a new issue using the **Bug Report** template
 3. Include as many details as possible: steps to reproduce, expected vs. actual behavior, screenshots
 
@@ -35,7 +35,7 @@ Thank you for your interest in contributing! All contributions are welcome.
 ## Development Environment
 
 ```bash
-git clone https://github.com/jacob-projects/myPortfolio.git
+git clone https://github.com/mytoandeptrai/porforlio.git
 cd myPortfolio
 npm install
 npm run dev
@@ -43,5 +43,5 @@ npm run dev
 
 ## Questions?
 
-Open an issue or contact via [LinkedIn](https://mytoandeptrai.online/linkedin).
+Open an issue or contact via [LinkedIn](https://www.linkedin.com/in/tran-phuoc-my-toan-613971199/).
 

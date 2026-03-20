@@ -38,6 +38,7 @@ interface Project {
   longDescription: string
   tags: string[]
   repository?: string
+  liveUrl?: string
   status: '🟢 online' | '🟡 GitHub' | '🔴 offline' | '🔴 Private' | '🟣 development'
   endpoints?: ProjectEndpoint[]
 }
@@ -111,7 +112,8 @@ Key Features:
 - Modern tech stack with Next.js 15 and TypeScript`,
       tags: ['Next.js', 'TypeScript', 'Solidity', 'Wagmi', 'Viem', 'Sepolia', 'Web3', 'Docker'],
       repository: 'https://github.com/mytoandeptrai/lottery-project',
-      status: '🟡 GitHub',
+      liveUrl: 'https://lottery-project-xi.vercel.app/',
+      status: '🟢 online',
     },
     {
       id: 4,
@@ -173,7 +175,8 @@ Key Features:
 - Comprehensive environment configuration with 11 variables`,
       tags: ['Next.js', 'TypeScript', 'Gemini AI', 'Clerk', 'NeonDB', 'UploadThing', 'Docker', 'Shadcn'],
       repository: 'https://github.com/mytoandeptrai/BLOG-AI',
-      status: '🟡 GitHub',
+      liveUrl: 'https://blog-ai-jacob.vercel.app/',
+      status: '🟢 online',
     },
     {
       id: 7,
@@ -203,6 +206,7 @@ Key Features:
         'Shadcn/UI',
       ],
       repository: 'https://github.com/mytoandeptrai/porforlio',
+      liveUrl: 'https://porforlio-jacob.vercel.app/',
       status: '🟢 online',
     },
   ]
@@ -493,25 +497,38 @@ Key Features:
                                 ))}
                               </div>
                             </div>
-                            <div className="flex items-center justify-between flex-wrap gap-4">
+                            <div className="flex items-start justify-between flex-wrap gap-4">
                               <div>
                                 <h4 className="text-lg font-medium mb-1">
                                   Status
                                 </h4>
                                 <span className="text-lg">{work.status}</span>
                               </div>
-                              {work.repository && (
-                                <a
-                                  href={work.repository}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-md transition-colors"
-                                >
-                                  <Github className="h-4 w-4" />
-                                  <span>View Repository</span>
-                                  <ExternalLink className="h-3 w-3" />
-                                </a>
-                              )}
+                              <div className="flex items-center gap-3 flex-wrap">
+                                {work.liveUrl && (
+                                  <a
+                                    href={work.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md transition-colors"
+                                  >
+                                    <ExternalLink className="h-4 w-4" />
+                                    <span>View Live Demo</span>
+                                  </a>
+                                )}
+                                {work.repository && (
+                                  <a
+                                    href={work.repository}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-md transition-colors"
+                                  >
+                                    <Github className="h-4 w-4" />
+                                    <span>View Repository</span>
+                                    <ExternalLink className="h-3 w-3" />
+                                  </a>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </TabsContent>

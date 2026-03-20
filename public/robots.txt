@@ -6,4 +6,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://mytoandeptrai.online/sitemap.xml
+Sitemap: https://porforlio-jacob.vercel.app/sitemap.xml
