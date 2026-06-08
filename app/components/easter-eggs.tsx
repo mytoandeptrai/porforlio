@@ -111,7 +111,7 @@ export default function EasterEggs() {
         output.push(
           "\x1b[34m=== Tran Phuoc My Toan (Jacob) ===\x1b[0m",
           "",
-          "Role: Frontend Engineer & Leader",
+          "Role: Software Engineer & Leader",
           "Experience: 4.5+ years",
           "Location: DaNang, Vietnam",
           "",

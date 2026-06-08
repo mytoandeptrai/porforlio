@@ -278,15 +278,18 @@ Key Features:
   }
 
   return (
-    <section className="bg-black py-20">
+    <section id="projects" className="bg-black py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold mb-4 font-mono">
-            <span className="text-[#569cd6]">const</span>{' '}
-            <span className="text-[#4ec9b0]">projects</span>{' '}
-            <span className="text-white">=</span>{' '}
-            <span className="text-[#dcdcaa]">getProjects</span>
-            <span className="text-white">();</span>
+            <span className="sr-only">Projects</span>
+            <span aria-hidden="true">
+              <span className="text-[#569cd6]">const</span>{' '}
+              <span className="text-[#4ec9b0]">projects</span>{' '}
+              <span className="text-white">=</span>{' '}
+              <span className="text-[#dcdcaa]">getProjects</span>
+              <span className="text-white">();</span>
+            </span>
           </h2>
           <p className="text-zinc-400 font-mono">
             // Click on projects for more details

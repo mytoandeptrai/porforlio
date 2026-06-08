@@ -114,7 +114,7 @@ export default function Hero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-black" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-black" aria-hidden="true" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
       <motion.div
@@ -127,7 +127,10 @@ export default function Hero() {
         <div className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-40 transition-opacity text-sm font-mono bg-black bg-opacity-50 px-2 py-1 rounded">
           01001010 01000001 01000011 01001111 01000010
         </div>
-        <h1 className="text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl">JACOB</h1>
+        <h1 className="text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl">
+          JACOB
+          <span className="sr-only"> — Software Engineer specializing in React, Next.js, TypeScript and Blockchain</span>
+        </h1>
       </motion.div>
 
         <motion.p
@@ -196,7 +199,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Backend easter egg - hidden message */}
-        <div className="mt-2 text-xs font-mono text-gray-600">
+        <div className="mt-2 text-xs font-mono text-gray-400">
           <span className="hidden sm:inline">// Press &gt; to open console</span>
           <span className="sm:hidden">// Tap 5x on name for surprise</span>
         </div>

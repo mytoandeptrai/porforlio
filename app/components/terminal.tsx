@@ -28,7 +28,7 @@ export default function Terminal() {
       prompt: '',
       command: `
 Name: Tran Phuoc My Toan (Jacob)
-Role: Frontend Engineer & Leader
+Role: Software Engineer & Leader
 Experience: 4.5+ years
 Location: DaNang, Vietnam
 Email: mytoandn@gmail.com
@@ -61,7 +61,7 @@ Languages:
     {
       prompt: '',
       command: `
-Frontend Engineer with 4.5+ years of experience developing and maintaining
+Software Engineer with 4.5+ years of experience developing and maintaining
 web applications using React, Next.js, and TypeScript. Experienced in working
 directly with clients to analyze requirements, propose solutions, and support
 project delivery. Strong in frontend architecture, code quality, and collaboration
@@ -117,7 +117,7 @@ Awards & Recognition:
   const staticContent = `user@portfolio:~$ whoami
 
 Name: Tran Phuoc My Toan (Jacob)
-Role: Frontend Engineer & Leader
+Role: Software Engineer & Leader
 Experience: 4.5+ years
 Location: DaNang, Vietnam
 Email: mytoandn@gmail.com

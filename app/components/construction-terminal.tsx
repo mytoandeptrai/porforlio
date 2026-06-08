@@ -239,7 +239,7 @@ Please check back later or contact me for more information.`,
                   construction-status.sh
                 </div>
               </div>
-              <div className="text-xs text-zinc-500">visitor@portfolio</div>
+              <div className="text-xs text-zinc-400">visitor@portfolio</div>
             </div>
 
             <div className="bg-zinc-900 p-4 font-mono text-sm h-[300px] overflow-y-auto">
@@ -253,7 +253,7 @@ Please check back later or contact me for more information.`,
             </div>
           </div>
 
-          <div className="mt-6 text-center text-zinc-500 text-sm font-mono">
+          <div className="mt-6 text-center text-zinc-400 text-sm font-mono">
             <p>
               This portfolio is actively being developed. New features coming
               soon.

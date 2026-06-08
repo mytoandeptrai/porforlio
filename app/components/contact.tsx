@@ -376,7 +376,7 @@ export default function Contact() {
                           </div>
                         ))
                       ) : (
-                        <div className="text-gray-500">
+                        <div className="text-gray-400">
                           // No logs available yet. Submit the form to see debug
                           output.
                         </div>

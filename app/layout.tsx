@@ -9,13 +9,16 @@ const inter = Inter({ subsets: ["latin"] })
 export const generateMetadata = (): Metadata => {
   return {
     title: {
-      default: "Jacob - Frontend Engineer | React, Next.js, TypeScript, Blockchain",
+      default: "Jacob - Software Engineer | React, Next.js, TypeScript, Blockchain",
       template: "%s | Jacob Portfolio",
     },
-    description: "Frontend Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development. Led projects at Var Meta, including payment systems and stablecoin platforms.",
+    description: "Software Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development. Led projects at Var Meta, including payment systems and stablecoin platforms.",
     metadataBase: new URL("https://porforlio-jacob.vercel.app"),
+    alternates: {
+      canonical: "https://porforlio-jacob.vercel.app",
+    },
     keywords: [
-      "Frontend Engineer",
+      "Software Engineer",
       "React Developer",
       "Next.js Developer",
       "TypeScript Developer",
@@ -45,22 +48,22 @@ export const generateMetadata = (): Metadata => {
       type: "website",
       locale: "en_US",
       url: "https://porforlio-jacob.vercel.app",
-      title: "Jacob - Frontend Engineer",
-      description: "Frontend Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
+      title: "Jacob - Software Engineer",
+      description: "Software Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
       siteName: "Jacob Portfolio",
       images: [
         {
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "Jacob - Frontend Engineer Portfolio",
+          alt: "Jacob - Software Engineer Portfolio",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Jacob - Frontend Engineer",
-      description: "Frontend Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
+      title: "Jacob - Software Engineer",
+      description: "Software Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
       images: ["/opengraph-image"],
     },
     robots: {
@@ -83,7 +86,6 @@ export const generateMetadata = (): Metadata => {
       shortcut: "/favicon.ico",
       apple: "/apple-touch-icon.png",
     },
-    manifest: "/manifest.json",
   }
 }
 
@@ -116,7 +118,41 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Tran Phuoc My Toan",
+              alternateName: "Jacob",
+              url: "https://porforlio-jacob.vercel.app",
+              jobTitle: "Software Engineer",
+              description:
+                "Software Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development.",
+              sameAs: [
+                "https://github.com/mytoandeptrai",
+                "https://www.linkedin.com/in/tran-phuoc-my-toan-613971199/",
+              ],
+              knowsAbout: [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Blockchain",
+                "Solidity",
+                "Web3",
+                "GoLang",
+              ],
+              worksFor: {
+                "@type": "Organization",
+                name: "Var Meta",
+              },
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   )
 }

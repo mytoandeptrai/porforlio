@@ -119,11 +119,14 @@ export default function WorkExperience() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold font-mono">
-                <span className="text-[#569cd6]">const</span>{' '}
-                <span className="text-[#4ec9b0]">Experience</span>{' '}
-                <span className="text-white">=</span>{' '}
-                <span className="text-[#dcdcaa]">getExperience</span>
-                <span className="text-white">();</span>
+                <span className="sr-only">Work Experience</span>
+                <span aria-hidden="true">
+                  <span className="text-[#569cd6]">const</span>{' '}
+                  <span className="text-[#4ec9b0]">Experience</span>{' '}
+                  <span className="text-white">=</span>{' '}
+                  <span className="text-[#dcdcaa]">getExperience</span>
+                  <span className="text-white">();</span>
+                </span>
               </h2>
             </motion.div>
 
@@ -178,7 +181,7 @@ export default function WorkExperience() {
                         <div className="text-muted-foreground font-mono text-sm mb-2">
                           <span className="text-blue-400">{job.company}</span>
                         </div>
-                        <div className="text-xs font-mono text-zinc-500">
+                        <div className="text-xs font-mono text-zinc-400">
                           {job.period}
                         </div>
                       </div>

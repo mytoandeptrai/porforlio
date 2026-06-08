@@ -203,7 +203,7 @@ export default function TechStack() {
       : skills
 
   return (
-    <section className="py-20 bg-black">
+    <section id="tech-stack" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
@@ -214,11 +214,14 @@ export default function TechStack() {
         >
           <div className="mb-10 text-center">
             <h2 className="text-3xl font-bold mb-2 font-mono">
-              <span className="text-[#569cd6]">const</span>{' '}
-              <span className="text-[#4ec9b0]">techStack</span>{' '}
-              <span className="text-white">=</span>{' '}
-              <span className="text-[#dcdcaa]">getSkills</span>
-              <span className="text-white">();</span>
+              <span className="sr-only">Tech Stack & Skills</span>
+              <span aria-hidden="true">
+                <span className="text-[#569cd6]">const</span>{' '}
+                <span className="text-[#4ec9b0]">techStack</span>{' '}
+                <span className="text-white">=</span>{' '}
+                <span className="text-[#dcdcaa]">getSkills</span>
+                <span className="text-white">();</span>
+              </span>
             </h2>
           </div>
 
@@ -263,7 +266,7 @@ export default function TechStack() {
             ))}
           </div>
 
-          <div className="mt-8 text-center font-mono text-xs text-zinc-500">
+          <div className="mt-8 text-center font-mono text-xs text-zinc-400">
             <code>/* Skills last updated: 03-02-2026 */</code>
           </div>
         </motion.div>

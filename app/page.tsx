@@ -10,7 +10,7 @@ import WorkExperience from './components/work-experience'
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white" aria-label="Jacob Portfolio">
       <Hero />
       <WorkExperience />
       <Portfolio />
