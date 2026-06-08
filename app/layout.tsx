@@ -2,7 +2,7 @@ import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import type React from "react" // Import React
 import type { Metadata, Viewport } from "next/types"
-
+import { Analytics } from '@vercel/analytics/next';
 const inter = Inter({ subsets: ["latin"] })
 
 // Add security headers
@@ -152,6 +152,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   )
