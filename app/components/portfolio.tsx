@@ -54,46 +54,172 @@ export default function Portfolio() {
   const works: Project[] = [
     {
       id: 1,
-      title: 'PWC Payment System',
+      title: 'Cross-chain Bridge (Non-custodial)',
       category: 'blockchain',
       year: '2025-2026',
       description:
-        'End-to-end payment system with blockchain integration for order management and transaction processing',
-      longDescription: `Led the development of a comprehensive payment system integrating blockchain networks (BSC, Tron) with traditional payment flows. Built using Vite.js for frontend and GoLang for backend services.
+        'Non-custodial cross-chain bridge with on-chain multisig approval, a Go relay and real-time order tracking',
+      longDescription: `Designed and launched a non-custodial cross-chain bridge between two blockchain networks, overseeing development from smart contract architecture to UI delivery within 5 months.
 
 Key Responsibilities:
-- Led project team end-to-end, gathering requirements and proposing technical solutions
-- Established frontend codebase with Vite.js and TypeScript, defining technical standards
-- Designed high-level payment flows with sequence diagrams for order creation and webhook callbacks
-- Built SDKs and generated API documentation using Fern
-- Worked with blockchain networks (BSC, Tron) for payment and transaction workflows
-- Contributed to backend development using GoLang for bug fixes and feature maintenance`,
-      tags: ['Vite.js', 'TypeScript', 'GoLang', 'Blockchain', 'BSC', 'Tron', 'Figma', 'Fern'],
+- Engineered the core bridge contract with enhanced security features and economic outflow management
+- Built a liquidity pool contract that enforces transfer caps without disrupting concurrent transactions
+- Developed an on-chain approval workflow with Gnosis Safe integration and a signing UI
+- Delivered a bridge UI with direct contract interaction and real-time order tracking
+- Hardened the Go relay: resumable orders after RPC failures, pause-state guards and refund reconciliation
+- Built operator tooling: de-duplicated low-balance and multisig alert emails, treasury views and fund-provenance reports`,
+      tags: ['Solidity', 'UUPS Proxy', 'Gnosis Safe', 'EIP-712', 'GoLang', 'Next.js', 'Wagmi v2'],
       status: '🔴 Private',
     },
     {
       id: 2,
-      title: 'PQA - PQUSD Stable Coin',
+      title: 'Cross-chain ERC-20 Token Migration Portal',
       category: 'blockchain',
       year: '2025-2026',
       description:
-        'Stablecoin platform with multi-blockchain support, KYC integration, and multisignature workflows',
-      longDescription: `Led frontend development for a stablecoin platform supporting multiple blockchain networks (Ethereum, Arbitrum, Tron, Abelian, Qday). Implemented complex features including SSO, rate limiting, and KYC verification.
+        'One-way, time-boxed portal that migrates ERC-20 tokens to a successor chain with multisig review of large orders',
+      longDescription: `Built a one-way, time-boxed portal that migrates multiple ERC-20 tokens from one chain to its successor chain. Users lock tokens on the source chain and the relayer releases them from a pre-funded pool on the target chain.
 
 Key Responsibilities:
-- Led frontend development and worked directly with clients for requirements gathering
-- Proposed frontend and system-level solutions for new features
-- Implemented Single Sign-On (SSO) across frontend and backend
-- Built custom rule-based rate limiting mechanism on backend
-- Worked with multiple blockchain networks (EVM and non-EVM environments)
-- Implemented multisignature workflows requiring multiple wallet approvals
-- Integrated KYC verification using Sumsub and Kafka-based event-driven systems
-- Worked with AWS (SES, S3, CloudFront) and Huawei Cloud deployment`,
-      tags: ['React', 'TypeScript', 'Solidity', 'Ethereum', 'Arbitrum', 'Tron', 'AWS', 'Kafka', 'Sumsub'],
+- Worked across all layers: contracts, Go relay and admin backend, event indexer, user dApp and admin portal
+- Implemented contract rules for a large-order threshold, refund and multisig review roles, and migration end-time guards
+- Routed large orders to Gnosis Safe multisig review with automatic refund on rejection
+- Added a manual-processing path after repeated release failures
+- Introduced versioned SQL migrations
+- Split the backend into eight independent repositories with PR and release pipelines`,
+      tags: ['Solidity', 'Foundry', 'GoLang', 'rindexer', 'Next.js', 'React', 'Gnosis Safe'],
       status: '🔴 Private',
     },
     {
       id: 3,
+      title: 'Multi-chain Stablecoin Platform',
+      category: 'blockchain',
+      year: '2025-2026',
+      description:
+        'Event-driven stablecoin platform with mint and redeem flows, KYC/KYB, multisig signing and real-time notifications',
+      longDescription: `Built an event-driven microservices platform for a multi-chain stablecoin supporting EVM and non-EVM chains (Ethereum, Arbitrum, QDay, Abelian), working directly with a Hong Kong-based client.
+
+Key Responsibilities:
+- Developed an event-driven architecture with Kafka (per-chain topics) and a multi-chain Blockchain Crawler for minting and transactions
+- Implemented mint and redeem flows end to end: request lifecycle, fees, order expiry and treasury operations
+- Signed transactions with AWS KMS and prevented nonce collisions between parallel workers with database-level wallet locking
+- Integrated Sumsub for KYC/KYB with post-approval onboarding
+- Implemented JWT-based SSO with token refresh and 2FA across services
+- Created a Gnosis Safe multisig signing UI in the Admin portal using EIP-712
+- Integrated wallet risk screening and rate limiting to secure mint and redeem requests
+- Designed a real-time notification layer with Socket.IO and Redis`,
+      tags: ['Kafka', 'NestJS', 'Gnosis Safe', 'EIP-712', 'JWT', 'Socket.IO', 'Redis', 'Sumsub', 'AWS KMS'],
+      status: '🔴 Private',
+    },
+    {
+      id: 4,
+      title: 'Crypto Payment Platform',
+      category: 'blockchain',
+      year: '2025-2026',
+      description:
+        'End-to-end crypto payment platform with webhook-based notifications, SDKs and API documentation',
+      longDescription: `Led end-to-end development of a crypto payment platform, collaborating with customers to gather requirements and propose technical solutions.
+
+Key Responsibilities:
+- Defined frontend architecture standards and guided implementation
+- Created Figma wireframes to validate concepts with customers
+- Designed payment flows with frontend and backend engineers, including integration diagrams and webhook-based notifications
+- Assisted Golang backend development by fixing bugs
+- Built SDKs and API documentation with Fern`,
+      tags: ['Vite.js', 'TypeScript', 'Figma', 'GoLang', 'Fern'],
+      status: '🔴 Private',
+    },
+    {
+      id: 5,
+      title: 'NFT Minting DApp',
+      category: 'blockchain',
+      year: '2025',
+      description:
+        'NFT minting platform deployed on Avalanche blockchain with Thirdweb SDK integration',
+      longDescription: `Developed a responsive NFT minting platform deployed on the Avalanche blockchain, featuring ERC-1155 smart contracts and a complete CI/CD pipeline.
+
+Key Responsibilities:
+- Deployed an ERC-1155 contract on Avalanche with Thirdweb CLI
+- Integrated the Thirdweb SDK for wallet connection and minting
+- Built a responsive minting interface with React, Shadcn-UI and Tailwind CSS
+- Added Google Analytics to track user interactions
+- Configured Nginx, Docker and GitLab CI/CD to automate AWS EC2 deployment`,
+      tags: ['React', 'TypeScript', 'ERC-1155', 'Thirdweb', 'Avalanche', 'Tailwind CSS', 'Docker', 'AWS'],
+      status: '🔴 Private',
+    },
+    {
+      id: 6,
+      title: 'Stock Exchange Platform',
+      category: 'fullstack',
+      year: '2024-2025',
+      description:
+        'Micro-frontend stock trading platform with real-time order book and advanced TradingView integration',
+      longDescription: `Established and maintained a micro-frontend architecture for a stock exchange platform, integrating with legacy systems and featuring real-time trading and advanced charting.
+
+Key Responsibilities:
+- Established the micro-frontend architecture with React, Webpack 5 and TypeScript
+- Defined frontend standards and conducted implementation reviews
+- Spearheaded TradingView chart customizations
+- Implemented a real-time order book via MQTT
+- Optimized frontend performance with web workers and caching
+- Worked with backend teams on API integration and frontend security`,
+      tags: ['React', 'TypeScript', 'Webpack 5', 'TradingView', 'MQTT', 'Web Workers'],
+      status: '🔴 Private',
+    },
+    {
+      id: 7,
+      title: 'MSPF - Image Analysis (IVA)',
+      category: 'frontend',
+      year: '2022-2024',
+      description:
+        'Multi Service Platform for image analysis with dynamic forms, multi-chart visualizations and Dockerized delivery',
+      longDescription: `Frontend work on the image analysis service of a Multi Service Platform at Hitachi Digital Services.
+
+Key Responsibilities:
+- Clarified requirements with customers, assigned tasks and conducted implementation reviews
+- Packaged source code with Docker for client delivery
+- Engineered UI features including dynamic forms and multi-chart visualizations
+- Wrote Jest unit tests and supported automation testing`,
+      tags: ['React', 'Next.js', 'Docker', 'Jest', 'Selenium', 'Python'],
+      status: '🔴 Private',
+    },
+    {
+      id: 8,
+      title: 'MSPF - Video Multi Service (VMS)',
+      category: 'frontend',
+      year: '2022-2024',
+      description:
+        'Multi Service Platform for video with HLS playback, custom API handling and legacy screen fixes',
+      longDescription: `Frontend work on the video service of a Multi Service Platform at Hitachi Digital Services.
+
+Key Responsibilities:
+- Translated client design documents into development tasks
+- Built video playback features using HLS
+- Implemented custom API handling
+- Fixed bugs in legacy screens`,
+      tags: ['HLS', 'JavaScript', 'React'],
+      status: '🔴 Private',
+    },
+    {
+      id: 9,
+      title: 'E-Learning Platform',
+      category: 'fullstack',
+      year: '2024',
+      description:
+        'E-learning admin and fullstack features with automated GitLab CI/CD deployment on AWS',
+      longDescription: `Contributed to an e-learning platform, from refining requirements to deployment.
+
+Key Responsibilities:
+- Refined requirements with business analysts
+- Established the Next.js admin codebase for course data
+- Contributed to fullstack features
+- Implemented a GitLab CI/CD pipeline for automated deployment on AWS EC2
+- Used AWS S3 for file storage`,
+      tags: ['Next.js', 'GitLab CI/CD', 'AWS EC2', 'AWS S3'],
+      status: '🔴 Private',
+    },
+    {
+      id: 10,
       title: 'Blockchain Lottery DApp',
       category: 'blockchain',
       year: '2025',
@@ -116,46 +242,7 @@ Key Features:
       status: '🟢 online',
     },
     {
-      id: 4,
-      title: 'NFT Minting DApp',
-      category: 'blockchain',
-      year: '2025',
-      description:
-        'NFT minting platform deployed on Avalanche blockchain with Thirdweb SDK integration',
-      longDescription: `Developed a responsive NFT minting platform deployed on the Avalanche blockchain, featuring ERC-1155 smart contracts and complete CI/CD pipeline.
-
-Key Responsibilities:
-- Deployed ERC-1155 smart contract to Avalanche using Thirdweb CLI & dashboard
-- Integrated Thirdweb SDK for wallet connection and NFT minting workflows
-- Developed responsive minting interface using React, Shadcn-UI, and Tailwind CSS
-- Set up Google Analytics to track user behavior and engagement
-- Configured Nginx, Docker, and GitLab CI/CD pipeline for automated deployment to AWS EC2
-- Handled blockchain concerns including wallet setup, gas estimation, and transaction signing`,
-      tags: ['React', 'TypeScript', 'Solidity', 'Thirdweb', 'Avalanche', 'ERC-1155', 'AWS', 'Docker'],
-      status: '🔴 Private',
-    },
-    {
-      id: 5,
-      title: 'KLDX - Stock Exchange Platform',
-      category: 'fullstack',
-      year: '2024-2025',
-      description:
-        'Micro-frontend stock trading platform with real-time order book and advanced TradingView integration',
-      longDescription: `Established and maintained a source-based micro-frontend architecture for a comprehensive stock exchange platform, featuring real-time trading capabilities and advanced charting.
-
-Key Responsibilities:
-- Established micro-frontend architecture using React, Webpack 5, and TypeScript
-- Defined frontend technical standards and reviewed implementations for consistency
-- Led development of complex features including TradingView chart customization
-- Implemented real-time order book using MQTT protocol
-- Improved frontend performance with web workers and caching strategies
-- Collaborated with backend teams on API integration and security practices
-- Worked with senior developers and UI/UX designers on interface refinements`,
-      tags: ['React', 'TypeScript', 'Webpack 5', 'Micro-frontend', 'TradingView', 'MQTT', 'Web Workers'],
-      status: '🔴 Private',
-    },
-    {
-      id: 6,
+      id: 11,
       title: 'AI Blog Generator',
       category: 'ai',
       year: '2025',
@@ -179,7 +266,7 @@ Key Features:
       status: '🟢 online',
     },
     {
-      id: 7,
+      id: 12,
       title: 'myPortfolio',
       category: 'frontend',
       year: '2025',

@@ -105,7 +105,7 @@ export default async function Image() {
               fontFamily: 'monospace',
             }}
           >
-            4.5+ years of experience
+            5 years of experience
           </div>
         </div>
 

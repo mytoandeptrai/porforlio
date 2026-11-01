@@ -41,6 +41,18 @@ export default function TechStack() {
       icon: 'SOL',
     },
 
+    // Blockchain
+    { name: 'Foundry', category: 'blockchain', icon: 'FDRY' },
+    { name: 'UUPS Proxy', category: 'blockchain', icon: 'UUPS' },
+    { name: 'ERC-20', category: 'blockchain', icon: 'ERC' },
+    { name: 'EIP-712', category: 'blockchain', icon: '712' },
+    { name: 'Gnosis Safe', category: 'blockchain', icon: 'SAFE' },
+    { name: 'Wagmi', category: 'blockchain', icon: 'WAGMI' },
+    { name: 'Viem', category: 'blockchain', icon: 'VIEM' },
+    { name: 'RainbowKit', category: 'blockchain', icon: 'RBOW' },
+    { name: 'Ethers', category: 'blockchain', icon: 'ETH' },
+    { name: 'Sumsub (KYC)', category: 'blockchain', icon: 'KYC' },
+
     // Frontend
     {
       name: 'React',
@@ -109,6 +121,12 @@ export default function TechStack() {
       category: 'backend',
       icon: 'EXP',
     },
+    { name: 'Kafka', category: 'backend', icon: 'KFK' },
+    { name: 'BullMQ', category: 'backend', icon: 'BULL' },
+    { name: 'Socket.IO', category: 'backend', icon: 'SIO' },
+    { name: 'Prisma', category: 'backend', icon: 'PRIS' },
+    { name: 'TypeORM', category: 'backend', icon: 'TORM' },
+    { name: 'RESTful API', category: 'backend', icon: 'REST' },
     {
       name: 'Docker',
       category: 'backend',
@@ -153,6 +171,7 @@ export default function TechStack() {
       category: 'cloud',
       icon: 'CICD',
     },
+    { name: 'GitHub Actions', category: 'cloud', icon: 'GHA' },
 
     // Tools
     {
@@ -189,6 +208,7 @@ export default function TechStack() {
 
   const categories = [
     { id: 'language', name: 'Languages' },
+    { id: 'blockchain', name: 'Blockchain' },
     { id: 'frontend', name: 'Frontend' },
     { id: 'backend', name: 'Backend' },
     { id: 'database', name: 'Database' },
@@ -267,7 +287,7 @@ export default function TechStack() {
           </div>
 
           <div className="mt-8 text-center font-mono text-xs text-zinc-400">
-            <code>/* Skills last updated: 03-02-2026 */</code>
+            <code>/* Skills last updated: 01-11-2026 */</code>
           </div>
         </motion.div>
       </div>

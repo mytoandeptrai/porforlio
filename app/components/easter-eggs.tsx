@@ -111,8 +111,8 @@ export default function EasterEggs() {
         output.push(
           "\x1b[34m=== Tran Phuoc My Toan (Jacob) ===\x1b[0m",
           "",
-          "Role: Software Engineer & Leader",
-          "Experience: 4.5+ years",
+          "Role: Senior Software Engineer (Fullstack Blockchain, Team Lead)",
+          "Experience: 5 years",
           "Location: DaNang, Vietnam",
           "",
           "Email: mytoandn@gmail.com",
@@ -122,7 +122,7 @@ export default function EasterEggs() {
           "Specialties:",
           "• React, Next.js, TypeScript",
           "• Node.js, NestJS, GoLang",
-          "• Blockchain & Payment Systems",
+          "• Solidity, Gnosis Safe, Cross-chain Bridges & Stablecoins",
           "",
           "\x1b[33mType 'awards' to see achievements\x1b[0m",
         )

@@ -12,7 +12,7 @@ export const generateMetadata = (): Metadata => {
       default: "Jacob - Software Engineer | React, Next.js, TypeScript, Blockchain",
       template: "%s | Jacob Portfolio",
     },
-    description: "Software Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development. Led projects at Var Meta, including payment systems and stablecoin platforms.",
+    description: "Senior Software Engineer with 5 years of experience building production web and blockchain systems with React, Next.js, TypeScript, NestJS, Go and Solidity. Team lead at Var Meta on stablecoin, cross-chain bridge, asset-migration and crypto payment products.",
     metadataBase: new URL("https://porforlio-jacob.vercel.app"),
     alternates: {
       canonical: "https://porforlio-jacob.vercel.app",
@@ -49,7 +49,7 @@ export const generateMetadata = (): Metadata => {
       locale: "en_US",
       url: "https://porforlio-jacob.vercel.app",
       title: "Jacob - Software Engineer",
-      description: "Software Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
+      description: "Senior Software Engineer with 5 years of experience | React, Next.js, TypeScript, Blockchain",
       siteName: "Jacob Portfolio",
       images: [
         {
@@ -63,7 +63,7 @@ export const generateMetadata = (): Metadata => {
     twitter: {
       card: "summary_large_image",
       title: "Jacob - Software Engineer",
-      description: "Software Engineer with 4.5+ years of experience | React, Next.js, TypeScript, Blockchain",
+      description: "Senior Software Engineer with 5 years of experience | React, Next.js, TypeScript, Blockchain",
       images: ["/opengraph-image"],
     },
     robots: {
@@ -128,9 +128,9 @@ export default function RootLayout({
               name: "Tran Phuoc My Toan",
               alternateName: "Jacob",
               url: "https://porforlio-jacob.vercel.app",
-              jobTitle: "Software Engineer",
+              jobTitle: "Senior Software Engineer",
               description:
-                "Software Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain development.",
+                "Senior Software Engineer with 5 years of experience building production web and blockchain systems with React, Next.js, TypeScript, NestJS, Go and Solidity.",
               sameAs: [
                 "https://github.com/mytoandeptrai",
                 "https://www.linkedin.com/in/tran-phuoc-my-toan-613971199/",

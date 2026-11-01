@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Jacob - Software Engineer Portfolio',
     short_name: 'Jacob Portfolio',
-    description: 'Software Engineer with 4.5+ years of experience specializing in React, Next.js, TypeScript, and Blockchain',
+    description: 'Software Engineer with 5 years of experience specializing in React, Next.js, TypeScript, and Blockchain',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

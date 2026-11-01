@@ -28,8 +28,8 @@ export default function Terminal() {
       prompt: '',
       command: `
 Name: Tran Phuoc My Toan (Jacob)
-Role: Software Engineer & Leader
-Experience: 4.5+ years
+Role: Senior Software Engineer (Fullstack Blockchain, Team Lead)
+Experience: 5 years
 Location: DaNang, Vietnam
 Email: mytoandn@gmail.com
 Phone: +84 941 275 946
@@ -61,19 +61,21 @@ Languages:
     {
       prompt: '',
       command: `
-Software Engineer with 4.5+ years of experience developing and maintaining
-web applications using React, Next.js, and TypeScript. Experienced in working
-directly with clients to analyze requirements, propose solutions, and support
-project delivery. Strong in frontend architecture, code quality, and collaboration
-with cross-functional teams, with hands-on experience in payment and blockchain-
-related systems.
+Senior Software Engineer with 5 years of experience building production web
+and blockchain systems, from React/Next.js frontends to NestJS and Go backends
+and Solidity smart contracts. Since June 2025, a dedicated developer and team
+lead working directly with a Hong Kong-based client on multi-chain stablecoins,
+a cross-chain bridge, an asset-migration portal and crypto payments. Experienced
+in KYC integration, multisig approval flows, event-driven architecture and Agile
+delivery with clients.
 
 Core Skills:
-- Frontend: React, Next.js, TypeScript, TailwindCSS, Redux, Zustand
-- Backend: Node.js, NestJS, Express, GoLang
-- Database: PostgreSQL, MongoDB, MySQL, Redis
-- DevOps: Docker, AWS (EC2, S3, SNS), GitLab CI/CD
-- Blockchain: Solidity, Wagmi, Ethers (Ethereum, BSC, Tron, Arbitrum)
+- Blockchain: Solidity, Foundry, EIP-712, Gnosis Safe, Wagmi, Viem, Ethers
+- Languages: TypeScript, GoLang, Solidity
+- Frontend: React, Next.js, Vite, Zustand, Redux, TailwindCSS
+- Backend: NestJS, Node.js, Express, Kafka, BullMQ, Socket.IO, Prisma, TypeORM
+- Database: PostgreSQL, MongoDB, Redis
+- DevOps: AWS (EC2, S3, SES, KMS), Docker, GitLab CI/CD, GitHub Actions, Nginx
 `,
       delay: 15,
     },
@@ -81,14 +83,16 @@ Core Skills:
     {
       prompt: '',
       command: `
-total 7
-drwxr-xr-x  2 jacob  staff  224 Mar 21 2026 .
+total 9
+drwxr-xr-x  2 jacob  staff  288 Mar 21 2026 .
 drwxr-xr-x 10 jacob  staff  320 Mar 21 2026 ..
--rw-r--r--  1 jacob  staff  8.5K Feb 2026 PWC-Payment-System.ts
--rw-r--r--  1 jacob  staff  12.3K Feb 2026 PQA-PQUSD-StableCoin.sol
+-rw-r--r--  1 jacob  staff  14.2K Feb 2026 Cross-chain-Bridge.sol
+-rw-r--r--  1 jacob  staff  11.6K Feb 2026 Token-Migration-Portal.sol
+-rw-r--r--  1 jacob  staff  12.3K Feb 2026 Multi-chain-Stablecoin.ts
+-rw-r--r--  1 jacob  staff  8.5K Feb 2026 Crypto-Payment-Platform.ts
 -rw-r--r--  1 jacob  staff  4.8K May 2025 NFT-Minting-DApp.tsx
--rw-r--r--  1 jacob  staff  15.7K Feb 2025 KLDX-Stock-Exchange.tsx
--rw-r--r--  1 jacob  staff  6.2K Jun 2024 Bit-kub-E-Learning.tsx
+-rw-r--r--  1 jacob  staff  15.7K Feb 2025 Stock-Exchange-Platform.tsx
+-rw-r--r--  1 jacob  staff  6.2K Jun 2024 E-Learning-Platform.tsx
 -rw-r--r--  1 jacob  staff  9.4K Feb 2024 MSPF-Image-Analysis.tsx
 -rw-r--r--  1 jacob  staff  7.1K May 2023 MSPF-Video-Service.tsx
 `,
@@ -117,19 +121,21 @@ Awards & Recognition:
   const staticContent = `user@portfolio:~$ whoami
 
 Name: Tran Phuoc My Toan (Jacob)
-Role: Software Engineer & Leader
-Experience: 4.5+ years
+Role: Senior Software Engineer (Fullstack Blockchain, Team Lead)
+Experience: 5 years
 Location: DaNang, Vietnam
 Email: mytoandn@gmail.com
 GitHub: github.com/mytoandeptrai
 
 user@portfolio:~$ ls -la projects/
 
-PWC-Payment-System.ts
-PQA-PQUSD-StableCoin.sol
+Cross-chain-Bridge.sol
+Token-Migration-Portal.sol
+Multi-chain-Stablecoin.ts
+Crypto-Payment-Platform.ts
 NFT-Minting-DApp.tsx
-KLDX-Stock-Exchange.tsx
-Bit-kub-E-Learning.tsx
+Stock-Exchange-Platform.tsx
+E-Learning-Platform.tsx
 MSPF-Image-Analysis.tsx
 MSPF-Video-Service.tsx`
 
