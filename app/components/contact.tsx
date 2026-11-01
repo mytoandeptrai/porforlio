@@ -71,7 +71,7 @@ export default function Contact() {
     const leftElements = Array.from({ length: 20 }).map((_, i) => (
       <div
         key={`left-${i}`}
-        className="text-xs text-white opacity-30"
+        className="text-xs text-foreground opacity-30"
         style={{
           position: 'absolute',
           top: `${i * 5}%`,
@@ -85,7 +85,7 @@ export default function Contact() {
     const rightElements = Array.from({ length: 20 }).map((_, i) => (
       <div
         key={`right-${i + 20}`}
-        className="text-xs text-white opacity-30"
+        className="text-xs text-foreground opacity-30"
         style={{
           position: 'absolute',
           top: `${i * 5}%`,
@@ -167,7 +167,7 @@ export default function Contact() {
   return (
     <section
       id="contact-section"
-      className="relative overflow-hidden bg-black py-20 font-mono"
+      className="relative overflow-hidden bg-background py-20 font-mono text-foreground"
     >
       <div className="container relative z-10 mx-auto px-4">
         <motion.div
@@ -177,21 +177,21 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mb-8 inline-block rounded bg-zinc-900 px-4 py-1 text-[#569cd6]">
-            <span className="text-[#c586c0]">import</span>{' '}
-            <span className="text-[#9cdcfe]">Contact</span>{' '}
-            <span className="text-[#c586c0]">from</span>{' '}
-            <span className="text-[#ce9178]">
+          <div className="mb-8 inline-block rounded bg-zinc-100 dark:bg-zinc-900 px-4 py-1 text-[#0000ff] dark:text-[#569cd6]">
+            <span className="text-[#af00db] dark:text-[#c586c0]">import</span>{' '}
+            <span className="text-[#001080] dark:text-[#9cdcfe]">Contact</span>{' '}
+            <span className="text-[#af00db] dark:text-[#c586c0]">from</span>{' '}
+            <span className="text-[#a31515] dark:text-[#ce9178]">
               &apos;./components/Contact&apos;
             </span>
             ;
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tighter text-[#dcdcaa] sm:text-4xl">
-            <span className="text-[#4ec9b0]">function</span>{' '}
-            <span className="text-[#dcdcaa]">GetInTouch</span>()
-            <span className="text-white"> {`{`}</span>
+          <h2 className="mb-4 text-3xl font-bold tracking-tighter text-[#795e26] dark:text-[#dcdcaa] sm:text-4xl">
+            <span className="text-[#267f99] dark:text-[#4ec9b0]">function</span>{' '}
+            <span className="text-[#795e26] dark:text-[#dcdcaa]">GetInTouch</span>()
+            <span className="text-foreground"> {`{`}</span>
           </h2>
-          <p className="mb-8 text-[#6a9955]">
+          <p className="mb-8 text-[#008000] dark:text-[#6a9955]">
             {`// Interested in collaborating on a project?`}
             <br />
             {`// Let's create something amazing together.`}
@@ -205,7 +205,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mx-auto max-w-2xl"
         >
-          <div className="rounded-lg border border-zinc-700 bg-zinc-900 shadow-lg">
+          <div className="dark rounded-lg border border-zinc-700 bg-zinc-900 shadow-lg">
             {/* Code editor header */}
             <div className="flex items-center justify-between border-b border-zinc-700 bg-black px-4 py-2">
               <div className="text-sm text-[#cccccc]">ContactForm.tsx</div>
@@ -389,8 +389,8 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        <div className="mt-8 text-center text-[#dcdcaa]">
-          <span className="text-white">{`}`}</span>
+        <div className="mt-8 text-center text-[#795e26] dark:text-[#dcdcaa]">
+          <span className="text-foreground">{`}`}</span>
         </div>
       </div>
 

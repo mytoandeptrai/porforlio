@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import type React from "react" // Import React
 import type { Metadata, Viewport } from "next/types"
 import { Analytics } from '@vercel/analytics/next';
+import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeToggle } from "@/components/theme-toggle"
 const inter = Inter({ subsets: ["latin"] })
 
 // Add security headers
@@ -102,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Add CSP meta tag */}
         <meta
@@ -151,7 +153,15 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ThemeToggle />
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

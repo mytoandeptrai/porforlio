@@ -173,7 +173,7 @@ export default function EasterEggs() {
             animate={{ opacity: 1, y: 0, backdropFilter: "blur(8px)" }}
             exit={{ opacity: 0, y: -20, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 border-b border-zinc-700 p-4 font-mono text-sm"
+            className="dark text-white fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 border-b border-zinc-700 p-4 font-mono text-sm"
             style={{ 
               maxHeight: "50vh", 
               overflowY: "auto",
@@ -241,7 +241,7 @@ export default function EasterEggs() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-4 right-4 z-50 bg-zinc-900 bg-opacity-90 border border-zinc-700 p-4 rounded-lg shadow-lg font-mono"
+            className="dark text-white fixed bottom-4 right-4 z-50 bg-zinc-900 bg-opacity-90 border border-zinc-700 p-4 rounded-lg shadow-lg font-mono"
             style={{ 
               backdropFilter: "blur(5px)",
               WebkitBackdropFilter: "blur(5px)"
@@ -293,7 +293,7 @@ export default function EasterEggs() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-900 bg-opacity-80 border border-red-700 p-4 rounded-lg shadow-lg font-mono max-w-md w-full"
+            className="dark text-white fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-900 bg-opacity-80 border border-red-700 p-4 rounded-lg shadow-lg font-mono max-w-md w-full"
             style={{ 
               backdropFilter: "blur(5px)",
               WebkitBackdropFilter: "blur(5px)"

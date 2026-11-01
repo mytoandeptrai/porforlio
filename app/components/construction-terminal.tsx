@@ -208,7 +208,7 @@ Please check back later or contact me for more information.`,
 
   return (
     <section
-      className="py-20 bg-black border-t border-zinc-800"
+      className="py-20 bg-background border-t border-zinc-200 dark:border-zinc-800"
       ref={terminalRef}
     >
       <div className="container mx-auto px-4">
@@ -220,14 +220,14 @@ Please check back later or contact me for more information.`,
           className="mx-auto max-w-4xl"
         >
           <div className="flex items-center justify-center mb-8">
-            <Terminal className="text-yellow-500 mr-3" size={24} />
-            <h2 className="text-2xl font-bold font-mono text-yellow-500">
+            <Terminal className="text-yellow-600 dark:text-yellow-500 mr-3" size={24} />
+            <h2 className="text-2xl font-bold font-mono text-yellow-600 dark:text-yellow-500">
               LOADING MORE CONTENT
             </h2>
-            <Terminal className="text-yellow-500 ml-3" size={24} />
+            <Terminal className="text-yellow-600 dark:text-yellow-500 ml-3" size={24} />
           </div>
 
-          <div className="rounded-lg overflow-hidden border border-zinc-700 shadow-lg">
+          <div className="dark rounded-lg overflow-hidden border border-zinc-700 shadow-lg">
             <div className="bg-zinc-800 px-4 py-2 flex items-center justify-between">
               <div className="flex items-center">
                 <div className="flex space-x-2 mr-4">
@@ -253,7 +253,7 @@ Please check back later or contact me for more information.`,
             </div>
           </div>
 
-          <div className="mt-6 text-center text-zinc-400 text-sm font-mono">
+          <div className="mt-6 text-center text-zinc-600 dark:text-zinc-400 text-sm font-mono">
             <p>
               This portfolio is actively being developed. New features coming
               soon.

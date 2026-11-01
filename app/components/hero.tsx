@@ -3,11 +3,19 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { ChevronDown, Github, Linkedin, Phone, FileDown } from "lucide-react"
+import { useTheme } from "next-themes"
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [showEasterEgg, setShowEasterEgg] = useState(false)
   const [clickCount, setClickCount] = useState(0)
+  const { resolvedTheme } = useTheme()
+  const particleColorRef = useRef("rgba(255, 255, 255, 0.5)")
+
+  useEffect(() => {
+    particleColorRef.current =
+      resolvedTheme === "light" ? "rgba(0, 0, 0, 0.45)" : "rgba(255, 255, 255, 0.5)"
+  }, [resolvedTheme])
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -49,7 +57,7 @@ export default function Hero() {
 
       draw() {
         if (!ctx) return
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)"
+        ctx.fillStyle = particleColorRef.current
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
@@ -114,7 +122,7 @@ export default function Hero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-black" aria-hidden="true" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-background" aria-hidden="true" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
       <motion.div
@@ -124,7 +132,7 @@ export default function Hero() {
         whileTap={{ scale: 0.95 }}
       >
         {/* Binary appears only on hover on sm+ screens */}
-        <div className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-40 transition-opacity text-sm font-mono bg-black bg-opacity-50 px-2 py-1 rounded">
+        <div className="hidden sm:block absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-40 transition-opacity text-sm font-mono text-white bg-black bg-opacity-50 px-2 py-1 rounded">
           01001010 01000001 01000011 01001111 01000010
         </div>
         <h1 className="text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl">
@@ -134,7 +142,7 @@ export default function Hero() {
       </motion.div>
 
         <motion.p
-          className="max-w-[600px] text-lg text-gray-400 sm:text-xl mb-8"
+          className="max-w-[600px] text-lg text-gray-600 dark:text-gray-400 sm:text-xl mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -152,11 +160,11 @@ export default function Hero() {
           {/* Resume Download Button */}
           <motion.button
             onClick={handleResumeDownload}
-            className="flex items-center justify-center w-32 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
+            className="flex items-center justify-center w-32 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FileDown className="h-4 w-4 text-white mr-2" />
+            <FileDown className="h-4 w-4 text-foreground mr-2" />
             <span className="text-purple-500">Resume</span>
           </motion.button>
           
@@ -164,11 +172,11 @@ export default function Hero() {
             href="https://github.com/mytoandeptrai"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-32 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
+            className="flex items-center justify-center w-32 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github className="h-4 w-4 text-white mr-2" />
+            <Github className="h-4 w-4 text-foreground mr-2" />
             <span className="text-green-500">GitHub</span>
           </motion.a>
           
@@ -176,11 +184,11 @@ export default function Hero() {
             href="https://www.linkedin.com/in/tran-phuoc-my-toan-613971199/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-32 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
+            className="flex items-center justify-center w-32 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Linkedin className="h-4 w-4 text-white mr-2" />
+            <Linkedin className="h-4 w-4 text-foreground mr-2" />
             <span className="text-blue-500">LinkedIn</span>
           </motion.a>
           
@@ -189,17 +197,17 @@ export default function Hero() {
             href="https://wa.me/+84941275946"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-32 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
+            className="flex items-center justify-center w-32 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-700 px-4 py-2 rounded-md font-mono text-sm transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Phone className="h-4 w-4 text-white mr-2" />
+            <Phone className="h-4 w-4 text-foreground mr-2" />
             <span className="text-green-500">WhatsApp</span>
           </motion.a>
         </motion.div>
 
         {/* Backend easter egg - hidden message */}
-        <div className="mt-2 text-xs font-mono text-gray-400">
+        <div className="mt-2 text-xs font-mono text-gray-600 dark:text-gray-400">
           <span className="hidden sm:inline">// Press &gt; to open console</span>
           <span className="sm:hidden">// Tap 5x on name for surprise</span>
         </div>
@@ -230,7 +238,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
-          <span className="text-xs font-mono text-gray-400 mb-2">scroll down</span>
+          <span className="text-xs font-mono text-gray-600 dark:text-gray-400 mb-2">scroll down</span>
           <motion.div
             animate={{
               y: [0, 8, 0],
@@ -241,7 +249,7 @@ export default function Hero() {
               ease: "easeInOut",
             }}
           >
-            <ChevronDown className="text-white h-6 w-6" />
+            <ChevronDown className="text-foreground h-6 w-6" />
           </motion.div>
         </motion.div>
       </div>

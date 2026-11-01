@@ -104,7 +104,7 @@ const experiences: Experience[] = [
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="min-h-screen py-20 bg-black text-white">
+    <section id="experience" className="min-h-screen py-20 bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           className="space-y-16"
@@ -125,17 +125,17 @@ export default function WorkExperience() {
               <h2 className="text-3xl lg:text-4xl font-bold font-mono">
                 <span className="sr-only">Work Experience</span>
                 <span aria-hidden="true">
-                  <span className="text-[#569cd6]">const</span>{' '}
-                  <span className="text-[#4ec9b0]">Experience</span>{' '}
-                  <span className="text-white">=</span>{' '}
-                  <span className="text-[#dcdcaa]">getExperience</span>
-                  <span className="text-white">();</span>
+                  <span className="text-[#0000ff] dark:text-[#569cd6]">const</span>{' '}
+                  <span className="text-[#267f99] dark:text-[#4ec9b0]">Experience</span>{' '}
+                  <span className="text-foreground">=</span>{' '}
+                  <span className="text-[#795e26] dark:text-[#dcdcaa]">getExperience</span>
+                  <span className="text-foreground">();</span>
                 </span>
               </h2>
             </motion.div>
 
             <motion.div
-              className="inline-block text-sm text-muted-foreground font-mono bg-zinc-900 border border-zinc-700 px-3 py-2 rounded-md"
+              className="inline-block text-sm text-muted-foreground font-mono bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 px-3 py-2 rounded-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -162,30 +162,30 @@ export default function WorkExperience() {
                   viewport={{ once: true }}
                 >
                   {/* Timeline point */}
-                  <div className="absolute left-6 top-8 w-4 h-4 rounded-full bg-zinc-900 border-2 border-purple-500 group-hover:border-green-500 transition-colors duration-300 z-10" />
+                  <div className="absolute left-6 top-8 w-4 h-4 rounded-full bg-background border-2 border-purple-500 group-hover:border-green-500 transition-colors duration-300 z-10" />
 
                   {/* Experience card */}
-                  <div className="ml-20 bg-zinc-900/50 border border-zinc-700 rounded-lg p-6 hover:bg-zinc-900/70 hover:border-zinc-600 transition-all duration-300">
+                  <div className="ml-20 bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-300 dark:border-zinc-700 rounded-lg p-6 hover:bg-zinc-100 dark:hover:bg-zinc-900/70 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300">
                     {/* Card header */}
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-xl font-semibold group-hover:text-purple-400 transition-colors">
+                          <h3 className="text-xl font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                             {job.position}
                           </h3>
                           {job.isActive && (
                             <Badge
                               variant="outline"
-                              className="bg-green-500/10 border-green-500/50 text-green-400"
+                              className="bg-green-500/10 border-green-500/50 text-green-700 dark:text-green-400"
                             >
                               Current
                             </Badge>
                           )}
                         </div>
                         <div className="text-muted-foreground font-mono text-sm mb-2">
-                          <span className="text-blue-400">{job.company}</span>
+                          <span className="text-blue-600 dark:text-blue-400">{job.company}</span>
                         </div>
-                        <div className="text-xs font-mono text-zinc-400">
+                        <div className="text-xs font-mono text-zinc-600 dark:text-zinc-400">
                           {job.period}
                         </div>
                       </div>
@@ -226,7 +226,7 @@ export default function WorkExperience() {
                       {job.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={tech}
-                          className="px-2 py-1 text-xs bg-zinc-800 border border-zinc-600 rounded font-mono hover:border-purple-500/50 transition-colors"
+                          className="px-2 py-1 text-xs bg-zinc-200 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-600 rounded font-mono hover:border-purple-500/50 transition-colors"
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{

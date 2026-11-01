@@ -365,20 +365,20 @@ Key Features:
   }
 
   return (
-    <section id="projects" className="bg-black py-20">
+    <section id="projects" className="bg-background py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold mb-4 font-mono">
             <span className="sr-only">Projects</span>
             <span aria-hidden="true">
-              <span className="text-[#569cd6]">const</span>{' '}
-              <span className="text-[#4ec9b0]">projects</span>{' '}
-              <span className="text-white">=</span>{' '}
-              <span className="text-[#dcdcaa]">getProjects</span>
-              <span className="text-white">();</span>
+              <span className="text-[#0000ff] dark:text-[#569cd6]">const</span>{' '}
+              <span className="text-[#267f99] dark:text-[#4ec9b0]">projects</span>{' '}
+              <span className="text-foreground">=</span>{' '}
+              <span className="text-[#795e26] dark:text-[#dcdcaa]">getProjects</span>
+              <span className="text-foreground">();</span>
             </span>
           </h2>
-          <p className="text-zinc-400 font-mono">
+          <p className="text-zinc-600 dark:text-zinc-400 font-mono">
             // Click on projects for more details
           </p>
         </div>
@@ -392,7 +392,7 @@ Key Features:
               className={`text-sm capitalize ${
                 selectedCategory === category
                   ? 'bg-[#007acc] hover:bg-[#0062a3] text-white'
-                  : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white'
+                  : 'bg-zinc-200 text-zinc-700 hover:bg-zinc-300 hover:text-black dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700 dark:hover:text-white'
               }`}
             >
               {category}
@@ -416,7 +416,7 @@ Key Features:
               >
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Card className="overflow-hidden bg-zinc-900 cursor-pointer hover:border-blue-500 transition-colors h-[320px]">
+                    <Card className="dark overflow-hidden bg-zinc-900 cursor-pointer hover:border-blue-500 transition-colors h-[320px]">
                       <CardContent className="p-6 font-mono h-full flex flex-col">
                         <pre className="text-sm whitespace-pre-wrap flex-1 overflow-hidden">
                           <code>
@@ -535,7 +535,7 @@ Key Features:
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-[900px] bg-zinc-900 border-zinc-700 text-white p-0 max-h-[90vh] overflow-y-auto">
+                  <DialogContent className="dark sm:max-w-[900px] bg-zinc-900 border-zinc-700 text-white p-0 max-h-[90vh] overflow-y-auto">
                     <DialogHeader className="px-6 pt-6 pb-2 flex flex-row items-center justify-between">
                       <DialogTitle className="text-2xl font-bold text-white">
                         {work.title}
