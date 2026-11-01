@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from "next/types"
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ScrollToTop } from "@/components/scroll-to-top"
 const inter = Inter({ subsets: ["latin"] })
 
 // Add security headers
@@ -160,6 +161,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ThemeToggle />
+          <ScrollToTop />
           {children}
         </ThemeProvider>
         <Analytics />
