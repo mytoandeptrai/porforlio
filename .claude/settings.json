@@ -24,6 +24,20 @@
   },
   "skillOverrides": {
     "autoresearch-coding": "user-invocable-only",
-    "vibekit-init": "user-invocable-only"
+    "vibekit-init": "user-invocable-only",
+    "agent-control-center": "off",
+    "swap-control-center": "off",
+    "clone-website": "off",
+    "tutien": "off",
+    "mermaid": "off",
+    "model-provider-settings": "off",
+    "proofline-orchestration": "off",
+    "graph-engineering-verified-orchestration": "off",
+    "threat-model-security-review": "off",
+    "the-creator": "off",
+    "memento": "off",
+    "clean-delivery": "off",
+    "council": "off",
+    "proofline": "off"
   }
 }
