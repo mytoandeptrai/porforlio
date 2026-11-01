@@ -11,13 +11,14 @@ Interactive portfolio website with terminal/code-editor design aesthetic. Built 
 ## Development Commands
 
 ```bash
-npm run dev    # Start development server on localhost:3000
-npm run build  # Production build
-npm run start  # Start production server
-npm run lint   # Run ESLint
+pnpm dev    # Start development server on localhost:3000
+pnpm build  # Production build
+pnpm start  # Start production server
+pnpm lint   # Not usable yet: no ESLint config, next lint prompts interactively
+pnpm exec tsc --noEmit  # Type check (validation command)
 ```
 
-**Package Manager**: Uses npm (has both package-lock.json and pnpm-lock.yaml, but npm is primary based on scripts)
+**Package Manager**: Uses pnpm (package-lock.json also exists but is legacy; do not update it)
 
 ## Architecture
 
@@ -164,7 +165,7 @@ Components are auto-configured with path aliases from components.json.
 
 ## Git Workflow
 
-- **Main branch**: `master`
+- **Main branch**: `main`
 - **Commit convention**: Semantic commits in English (`feat:`, `fix:`, `refactor:`, `docs:`, `chore:`)
 - **PR guidelines**: See CONTRIBUTING.md
 
@@ -182,3 +183,14 @@ Components are auto-configured with path aliases from components.json.
 - **AGENTS.md**: Detailed implementation notes on non-obvious patterns (canvas system, easter eggs, terminal animations)
 - **CONTRIBUTING.md**: Contribution guidelines and project standards
 - **README.md**: Feature overview and setup instructions
+
+<!-- BEGIN: minimal-vibe-coding-kit -->
+@AGENTS.md
+
+## Minimal Vibe Coding Kit
+
+- Read `backbone.yml` before changing code.
+- If `meta.template_status` is `uninitialized`, follow `.vibekit/init/FIRST_TIME_INIT.md` and wait for approval before writing.
+- After init, follow `backbone.yml` `conventions` before adding new project patterns.
+- Prefer project skills for multi-step workflows: `/autoresearch-coding`, `/security-scan`, `/daily-enhance`.
+<!-- END: minimal-vibe-coding-kit -->
